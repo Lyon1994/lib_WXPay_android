@@ -22,6 +22,7 @@ public class ScanPayReqData  implements Serializable{
 	//每个字段具体的意思请查看API文档
     private String appid = "";
     private String mch_id = "";
+	private String sub_mch_id = "";
     private String device_info = "";
     private String nonce_str = "";
     private String sign = "";
@@ -35,26 +36,6 @@ public class ScanPayReqData  implements Serializable{
     private String goods_tag = "";
     private String auth_code = "";
 
-    public ScanPayReqData(String authCode,String body,String attach,String outTradeNo,int totalFee,String deviceInfo,String spBillCreateIP,String timeStart,String timeExpire,String goodsTag){
-
-        setAppid(Configure.getAppid());
-
-        setMch_id(Configure.getMchid());
-        setAuth_code(authCode);
-        setBody(body);
-        setAttach(attach);
-        setOut_trade_no(outTradeNo);
-        setTotal_fee(totalFee);
-        setDevice_info(deviceInfo);
-        setSpbill_create_ip(spBillCreateIP);
-        setTime_start(timeStart);
-        setTime_expire(timeExpire);
-        setGoods_tag(goodsTag);
-        setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
-        String sign = Signature.getSign(toMap());
-        setSign(sign);
-    }
-    
     public ScanPayReqData(String authCode,String body,String outTradeNo,int totalFee,String spBillCreateIP){
 
         setAppid(Configure.getAppid());
@@ -69,117 +50,146 @@ public class ScanPayReqData  implements Serializable{
         String sign = Signature.getSign(toMap());
         setSign(sign);
     }
+    
+    public ScanPayReqData(String authCode,String body,String attach,String outTradeNo,int totalFee,String deviceInfo,String spBillCreateIP,String timeStart,String timeExpire,String goodsTag){
+
+        setAppid(Configure.getAppid());
+
+        setMch_id(Configure.getMchid());
+        setSub_mch_id(Configure.getSubMchid());
+        setAuth_code(authCode);
+        setBody(body);
+        setAttach(attach);
+        setOut_trade_no(outTradeNo);
+        setTotal_fee(totalFee);
+        setDevice_info(deviceInfo);
+        setSpbill_create_ip(spBillCreateIP);
+        setTime_start(timeStart);
+        setTime_expire(timeExpire);
+        setGoods_tag(goodsTag);
+        setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
+        String sign = Signature.getSign(toMap());
+        setSign(sign);
+    }
 
     public String getAppid() {
         return appid;
-    }
-
-    public void setAppid(String appid) {
-        this.appid = appid;
-    }
-
-    public String getMch_id() {
-        return mch_id;
-    }
-
-    public void setMch_id(String mch_id) {
-        this.mch_id = mch_id;
-    }
-
-    public String getDevice_info() {
-        return device_info;
-    }
-
-    public void setDevice_info(String device_info) {
-        this.device_info = device_info;
-    }
-
-    public String getNonce_str() {
-        return nonce_str;
-    }
-
-    public void setNonce_str(String nonce_str) {
-        this.nonce_str = nonce_str;
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
     }
 
     public String getAttach() {
         return attach;
     }
 
-    public void setAttach(String attach) {
-        this.attach = attach;
+    public String getAuth_code() {
+        return auth_code;
     }
 
-    public String getOut_trade_no() {
-        return out_trade_no;
+    public String getBody() {
+        return body;
     }
 
-    public void setOut_trade_no(String out_trade_no) {
-        this.out_trade_no = out_trade_no;
-    }
-
-    public int getTotal_fee() {
-        return total_fee;
-    }
-
-    public void setTotal_fee(int total_fee) {
-        this.total_fee = total_fee;
-    }
-
-    public String getSpbill_create_ip() {
-        return spbill_create_ip;
-    }
-
-    public void setSpbill_create_ip(String spbill_create_ip) {
-        this.spbill_create_ip = spbill_create_ip;
-    }
-
-    public String getTime_start() {
-        return time_start;
-    }
-
-    public void setTime_start(String time_start) {
-        this.time_start = time_start;
-    }
-
-    public String getTime_expire() {
-        return time_expire;
-    }
-
-    public void setTime_expire(String time_expire) {
-        this.time_expire = time_expire;
+    public String getDevice_info() {
+        return device_info;
     }
 
     public String getGoods_tag() {
         return goods_tag;
     }
 
-    public void setGoods_tag(String goods_tag) {
-        this.goods_tag = goods_tag;
+    public String getMch_id() {
+        return mch_id;
     }
 
-    public String getAuth_code() {
-        return auth_code;
+    public String getNonce_str() {
+        return nonce_str;
+    }
+
+    public String getOut_trade_no() {
+        return out_trade_no;
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public String getSpbill_create_ip() {
+        return spbill_create_ip;
+    }
+
+    public String getSub_mch_id() {
+		return sub_mch_id;
+	}
+
+    public String getTime_expire() {
+        return time_expire;
+    }
+
+    public String getTime_start() {
+        return time_start;
+    }
+
+    public int getTotal_fee() {
+        return total_fee;
+    }
+
+    public void setAppid(String appid) {
+        this.appid = appid;
+    }
+
+    public void setAttach(String attach) {
+        this.attach = attach;
     }
 
     public void setAuth_code(String auth_code) {
         this.auth_code = auth_code;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public void setDevice_info(String device_info) {
+        this.device_info = device_info;
+    }
+
+    public void setGoods_tag(String goods_tag) {
+        this.goods_tag = goods_tag;
+    }
+
+    public void setMch_id(String mch_id) {
+        this.mch_id = mch_id;
+    }
+
+    public void setNonce_str(String nonce_str) {
+        this.nonce_str = nonce_str;
+    }
+
+    public void setOut_trade_no(String out_trade_no) {
+        this.out_trade_no = out_trade_no;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign;
+    }
+
+    public void setSpbill_create_ip(String spbill_create_ip) {
+        this.spbill_create_ip = spbill_create_ip;
+    }
+
+    public void setSub_mch_id(String sub_mch_id) {
+		this.sub_mch_id = sub_mch_id;
+	}
+
+    public void setTime_expire(String time_expire) {
+        this.time_expire = time_expire;
+    }
+
+	public void setTime_start(String time_start) {
+        this.time_start = time_start;
+    }
+
+	public void setTotal_fee(int total_fee) {
+        this.total_fee = total_fee;
     }
 
 	public Map<String, Object> toMap() {

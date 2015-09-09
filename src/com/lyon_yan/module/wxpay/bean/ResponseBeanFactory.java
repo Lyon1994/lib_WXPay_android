@@ -26,6 +26,7 @@ public class ResponseBeanFactory {
 		createOrderResData.setReturn_msg(getValue(map, "return_msg"));
 		createOrderResData.setAppid(getValue(map, "appid"));
 		createOrderResData.setMch_id(getValue(map, "mch_id"));
+		createOrderResData.setSub_mch_id("sub_mch_id");
 		createOrderResData.setDevice_info(getValue(map, "device_info"));
 		createOrderResData.setNonce_str(getValue(map, "nonce_str"));
 		createOrderResData.setSign(getValue(map, "sign"));
@@ -53,6 +54,7 @@ public class ResponseBeanFactory {
 		scanPayResData.setReturn_msg(getValue(map, "return_msg"));
 		scanPayResData.setAppid(getValue(map, "appid"));
 		scanPayResData.setMch_id(getValue(map, "mch_id"));
+		scanPayResData.setSub_mch_id("sub_mch_id");
 		scanPayResData.setDevice_info(getValue(map, "device_info"));
 		scanPayResData.setNonce_str(getValue(map, "nonce_str"));
 		scanPayResData.setSign(getValue(map, "sign"));
@@ -83,6 +85,7 @@ public class ResponseBeanFactory {
 		orderQueryResData.setReturn_msg(getValue(map, "return_msg"));
 		orderQueryResData.setAppid(getValue(map, "appid"));
 		orderQueryResData.setMch_id(getValue(map, "mch_id"));
+		orderQueryResData.setSub_mch_id("sub_mch_id");
 		orderQueryResData.setDevice_info(getValue(map, "device_info"));
 		orderQueryResData.setNonce_str(getValue(map, "nonce_str"));
 		orderQueryResData.setSign(getValue(map, "sign"));
@@ -117,6 +120,7 @@ public class ResponseBeanFactory {
 		refundResData.setReturn_msg(getValue(map, "return_msg"));
 		refundResData.setAppid(getValue(map, "appid"));
 		refundResData.setMch_id(getValue(map, "mch_id"));
+		refundResData.setSub_mch_id("sub_mch_id");
 		refundResData.setDevice_info(getValue(map, "device_info"));
 		refundResData.setNonce_str(getValue(map, "nonce_str"));
 		refundResData.setSign(getValue(map, "sign"));
@@ -148,6 +152,7 @@ public class ResponseBeanFactory {
 		refundQueryResData.setReturn_msg(getValue(map, "return_msg"));
 		refundQueryResData.setAppid(getValue(map, "appid"));
 		refundQueryResData.setMch_id(getValue(map, "mch_id"));
+		refundQueryResData.setSub_mch_id("sub_mch_id");
 		refundQueryResData.setDevice_info(getValue(map, "device_info"));
 		refundQueryResData.setNonce_str(getValue(map, "nonce_str"));
 		refundQueryResData.setSign(getValue(map, "sign"));
@@ -180,6 +185,7 @@ public class ResponseBeanFactory {
 		closeOrderResData.setReturn_msg(getValue(map, "return_msg"));
 		closeOrderResData.setAppid(getValue(map, "appid"));
 		closeOrderResData.setMch_id(getValue(map, "mch_id"));
+		closeOrderResData.setSub_mch_id("sub_mch_id");
 		closeOrderResData.setNonce_str(getValue(map, "nonce_str"));
 		closeOrderResData.setSign(getValue(map, "sign"));
 		closeOrderResData.setResult_code(getValue(map, "result_code"));
@@ -196,6 +202,7 @@ public class ResponseBeanFactory {
 		shortUrlResData.setReturn_msg(getValue(map, "return_msg"));
 		shortUrlResData.setAppid(getValue(map, "appid"));
 		shortUrlResData.setMch_id(getValue(map, "mch_id"));
+		shortUrlResData.setSub_mch_id("sub_mch_id");
 		shortUrlResData.setNonce_str(getValue(map, "nonce_str"));
 		shortUrlResData.setSign(getValue(map, "sign"));
 		shortUrlResData.setResult_code(getValue(map, "result_code"));

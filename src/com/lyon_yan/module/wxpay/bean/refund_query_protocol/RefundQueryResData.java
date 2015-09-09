@@ -20,6 +20,7 @@ public class RefundQueryResData  implements Serializable{
 	private String err_code_des = "";
 	private String appid = "";
 	private String mch_id = "";
+    private String sub_mch_id ="";
 	private String nonce_str = "";
 	private String sign = "";
 
@@ -223,6 +224,14 @@ public class RefundQueryResData  implements Serializable{
 
 	public void setCash_fee_type(String cash_fee_type) {
 		this.cash_fee_type = cash_fee_type;
+	}
+
+	public String getSub_mch_id() {
+		return sub_mch_id;
+	}
+
+	public void setSub_mch_id(String sub_mch_id) {
+		this.sub_mch_id = sub_mch_id;
 	}
 
 }

@@ -20,6 +20,7 @@ public class ShortUrlReqData implements Serializable{
 	//每个字段具体的意思请查看API文档
     private String appid = "";
     private String mch_id = "";
+	private String sub_mch_id = "";
     private String long_url  = "";
     private String nonce_str = "";
     private String sign = "";
@@ -50,43 +51,51 @@ public class ShortUrlReqData implements Serializable{
         return appid;
     }
 
-    public void setAppid(String appid) {
-        this.appid = appid;
-    }
+    public String getLong_url() {
+		return long_url;
+	}
 
     public String getMch_id() {
         return mch_id;
     }
 
-    public void setMch_id(String mch_id) {
-        this.mch_id = mch_id;
-    }
-
-
     public String getNonce_str() {
         return nonce_str;
     }
 
-    public void setNonce_str(String nonce_str) {
-        this.nonce_str = nonce_str;
-    }
 
     public String getSign() {
         return sign;
     }
 
-    public void setSign(String sign) {
+    public String getSub_mch_id() {
+		return sub_mch_id;
+	}
+
+    public void setAppid(String appid) {
+        this.appid = appid;
+    }
+
+    public void setLong_url(String long_url) {
+		this.long_url = long_url;
+	}
+
+    
+    
+	public void setMch_id(String mch_id) {
+        this.mch_id = mch_id;
+    }
+
+	public void setNonce_str(String nonce_str) {
+        this.nonce_str = nonce_str;
+    }
+
+	public void setSign(String sign) {
         this.sign = sign;
     }
 
-    
-    
-	public String getLong_url() {
-		return long_url;
-	}
-
-	public void setLong_url(String long_url) {
-		this.long_url = long_url;
+	public void setSub_mch_id(String sub_mch_id) {
+		this.sub_mch_id = sub_mch_id;
 	}
 
 	public Map<String, Object> toMap() {

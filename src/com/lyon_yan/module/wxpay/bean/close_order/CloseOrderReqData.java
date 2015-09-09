@@ -17,6 +17,7 @@ public class CloseOrderReqData  implements Serializable {
 	 */
 	private String appid = "";
 	private String mch_id = "";
+	private String sub_mch_id = "";
 	private String out_trade_no = "";
 	private String nonce_str = "";
 	private String sign  = "";
@@ -26,6 +27,7 @@ public class CloseOrderReqData  implements Serializable {
 		super();
 		setAppid(Configure.getAppid());
 		setMch_id(Configure.getMchid());
+		setSub_mch_id(Configure.getSubMchid());
 		this.out_trade_no = out_trade_no;
 		setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
 		// 根据API给的签名规则进行签名
@@ -37,12 +39,29 @@ public class CloseOrderReqData  implements Serializable {
 		return appid;
 	}
 
-	public void setAppid(String appid) {
-		this.appid = appid;
-	}
-
 	public String getMch_id() {
 		return mch_id;
+	}
+
+	public String getNonce_str() {
+		return nonce_str;
+	}
+
+	public String getOut_trade_no() {
+		return out_trade_no;
+	}
+
+
+	public String getSign() {
+		return sign;
+	}
+
+	public String getSub_mch_id() {
+		return sub_mch_id;
+	}
+
+	public void setAppid(String appid) {
+		this.appid = appid;
 	}
 
 	public void setMch_id(String mch_id) {
@@ -50,29 +69,20 @@ public class CloseOrderReqData  implements Serializable {
 	}
 
 
-	public String getNonce_str() {
-		return nonce_str;
-	}
-
 	public void setNonce_str(String nonce_str) {
 		this.nonce_str = nonce_str;
 	}
 
-	public String getSign() {
-		return sign;
+	public void setOut_trade_no(String out_trade_no) {
+		this.out_trade_no = out_trade_no;
 	}
 
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
 
-
-	public String getOut_trade_no() {
-		return out_trade_no;
-	}
-
-	public void setOut_trade_no(String out_trade_no) {
-		this.out_trade_no = out_trade_no;
+	public void setSub_mch_id(String sub_mch_id) {
+		this.sub_mch_id = sub_mch_id;
 	}
 
 	public Map<String, Object> toMap() {
