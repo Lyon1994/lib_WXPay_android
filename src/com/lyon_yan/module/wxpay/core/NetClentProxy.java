@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 /**
  * 
  * @author Lyon
- *
+ * 
  */
 @SuppressWarnings("deprecation")
 public class NetClentProxy {
@@ -31,10 +31,11 @@ public class NetClentProxy {
 		String result = null;
 		HttpPost httpPost = new HttpPost(uri);
 		try {
-		// 得指明使用UTF-8编码，否则到API服务器XML的中文不能被成功识别
-		StringEntity postEntity = new StringEntity(postDataXML, "UTF-8");
-		httpPost.addHeader("Content-Type", "text/xml");
-		httpPost.setEntity(postEntity);
+				String t = postDataXML.replace("<sub_mch_id></sub_mch_id>", "");
+			// 得指明使用UTF-8编码，否则到API服务器XML的中文不能被成功识别
+			StringEntity postEntity = new StringEntity(t, "UTF-8");
+			httpPost.addHeader("Content-Type", "text/xml");
+			httpPost.setEntity(postEntity);
 			HttpResponse response = httpClient.execute(httpPost);
 			HttpEntity entity = response.getEntity();
 			result = EntityUtils.toString(entity, "UTF-8");
@@ -46,8 +47,8 @@ public class NetClentProxy {
 		}
 		return result;
 	}
-	
-	public static boolean checkSignValid(String xml){
+
+	public static boolean checkSignValid(String xml) {
 		try {
 			return Signature.checkIsSignValidFromResponseString(xml);
 		} catch (ParserConfigurationException e) {

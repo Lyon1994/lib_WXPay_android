@@ -6,6 +6,8 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.util.Log;
+
 import com.lyon_yan.module.wxpay.config.Configure;
 import com.lyon_yan.module.wxpay.core.RandomStringGenerator;
 import com.lyon_yan.module.wxpay.core.Signature;
@@ -45,6 +47,7 @@ public class CreateOrderReqData  implements Serializable{
 		// 微信分配的公众号ID（开通公众号之后可以获取到）
 		setAppid(Configure.getAppid());
 		setMch_id(Configure.getMchid());
+		setSub_mch_id(Configure.getSubMchid());
 		this.body = body;
 		this.out_trade_no = out_trade_no;
 		this.total_fee = total_fee;
