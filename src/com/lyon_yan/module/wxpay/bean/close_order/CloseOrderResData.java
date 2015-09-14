@@ -8,9 +8,6 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 public class CloseOrderResData  implements Serializable{
-    /**
-	 * 
-	 */
     private String return_code = "";
     private String return_msg = "";
 
