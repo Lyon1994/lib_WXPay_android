@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -29,7 +28,8 @@ public class XMLFactory {
 			XStream xStreamForRequestPostData = new XStream(new DomDriver(
 					"UTF-8", new XmlFriendlyNameCoder("-_", "_")));
 			// 将要提交给API的数据对象转换成XML格式数据Post给API
-			return xStreamForRequestPostData.toXML(object);
+			String xml= xStreamForRequestPostData.toXML(object);
+			return xml;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -43,7 +43,7 @@ public class XMLFactory {
 					.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			InputStream is = Util.getStringStream(xmlString);
-			Document document = builder.parse(is);
+			org.w3c.dom.Document document = builder.parse(is);
 
 			// 获取到document里面的全部结点
 			NodeList allNodes = document.getFirstChild().getChildNodes();

@@ -5,6 +5,8 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.util.Log;
+
 import com.lyon_yan.module.wxpay.config.Configure;
 import com.lyon_yan.module.wxpay.core.RandomStringGenerator;
 import com.lyon_yan.module.wxpay.core.Signature;
