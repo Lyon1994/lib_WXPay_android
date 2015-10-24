@@ -36,6 +36,7 @@ public class ShortUrlReqData implements Serializable{
 
         //微信支付分配的商户号ID（开通公众号的微信支付功能之后可以获取到）
         setMch_id(Configure.getMchid());
+		setSub_mch_id(Configure.getSubMchid());
         setLong_url(long_url);
 
         //随机字符串，不长于32 位

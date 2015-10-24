@@ -41,6 +41,7 @@ public class ScanPayReqData  implements Serializable{
         setAppid(Configure.getAppid());
 
         setMch_id(Configure.getMchid());
+		setSub_mch_id(Configure.getSubMchid());
         setAuth_code(authCode);
         setBody(body);
         setOut_trade_no(outTradeNo);
