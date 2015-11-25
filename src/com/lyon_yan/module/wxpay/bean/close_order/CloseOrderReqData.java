@@ -86,7 +86,7 @@ public class CloseOrderReqData  implements Serializable {
 	public void setSub_mch_id(String sub_mch_id) {
 		this.sub_mch_id = sub_mch_id;
 	}
-
+	
 	public Map<String, Object> toMap() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		Field[] fields = this.getClass().getDeclaredFields();
@@ -94,7 +94,7 @@ public class CloseOrderReqData  implements Serializable {
 			Object obj;
 			try {
 				obj = field.get(this);
-				if (obj != null && !obj.toString().equals("")) {
+				if (obj != null&&!obj.toString().equals("")) {
 					map.put(field.getName(), obj);
 				}
 			} catch (IllegalArgumentException e) {
